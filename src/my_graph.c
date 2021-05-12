@@ -41,6 +41,13 @@ struct Graph* createGraph( int V ) {
 };
 
 void createEdge( struct Graph* graph, int src, int dest ) {
+    //проверяем наличие такого ребра
+    struct Node* pCrawl = graph->array[src].head;
+    while ( pCrawl ) {
+        if ( pCrawl->vertex == dest ) return;
+        pCrawl = pCrawl->next;
+    }
+
     //добавляем новый узел в начало списка смежности
     struct Node* destNode = createNode(dest);
     destNode->next = graph->array[src].head;
@@ -51,7 +58,7 @@ void createEdge( struct Graph* graph, int src, int dest ) {
     graph->array[dest].head = srcNode;
 }
 
-void printGraph( struct Graph* graph, char* path) {
+void printGraph( struct Graph* graph, char* path ) {
     FILE* fp = fopen(path, "w");
 
     int i;
@@ -76,7 +83,7 @@ char* fromFileToString( FILE* fp ) {
     while ((c = fgetc(fp)) != EOF) {
         string[i] = c;
         i++;
-        if (i == strSize) {
+        if ( i == strSize ) {
             strSize = strSize * 2;
             string = realloc(string, strSize);
         }
