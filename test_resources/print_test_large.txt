@@ -1,0 +1,68 @@
+
+ Adjacency list of vertex 0
+ head-> 1-> 19
+
+ Adjacency list of vertex 1
+ head-> 0
+
+ Adjacency list of vertex 2
+ head-> 10
+
+ Adjacency list of vertex 3
+ head->
+
+ Adjacency list of vertex 4
+ head->
+
+ Adjacency list of vertex 5
+ head->
+
+
+ Adjacency list of vertex 6
+ head->
+
+ Adjacency list of vertex 7
+ head->
+
+ Adjacency list of vertex 8
+ head->
+
+
+ Adjacency list of vertex 9
+ head->
+
+ Adjacency list of vertex 10
+ head-> 2
+
+ Adjacency list of vertex 11
+ head->
+
+
+ Adjacency list of vertex 12
+ head->
+
+ Adjacency list of vertex 13
+ head->
+
+ Adjacency list of vertex 14
+ head->
+
+
+ Adjacency list of vertex 15
+ head-> 16
+
+ Adjacency list of vertex 16
+ head-> 15
+
+ Adjacency list of vertex 17
+ head->
+
+
+ Adjacency list of vertex 18
+ head->
+
+ Adjacency list of vertex 19
+ head-> 0
+
+ Adjacency list of vertex 20
+ head->

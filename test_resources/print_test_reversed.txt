@@ -1,0 +1,9 @@
+
+ Adjacency list of vertex 0
+ head-> 1-> 2
+
+ Adjacency list of vertex 1
+ head-> 0-> 2
+
+ Adjacency list of vertex 2
+ head 0-> 1
