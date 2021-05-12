@@ -9,44 +9,40 @@
  head-> 10
 
  Adjacency list of vertex 3
- head->
+ head
 
  Adjacency list of vertex 4
- head->
+ head
 
  Adjacency list of vertex 5
- head->
-
+ head
 
  Adjacency list of vertex 6
- head->
+ head
 
  Adjacency list of vertex 7
- head->
+ head
 
  Adjacency list of vertex 8
- head->
-
+ head
 
  Adjacency list of vertex 9
- head->
+ head
 
  Adjacency list of vertex 10
  head-> 2
 
  Adjacency list of vertex 11
- head->
-
+ head
 
  Adjacency list of vertex 12
- head->
+ head
 
  Adjacency list of vertex 13
- head->
+ head
 
  Adjacency list of vertex 14
- head->
-
+ head
 
  Adjacency list of vertex 15
  head-> 16
@@ -55,14 +51,10 @@
  head-> 15
 
  Adjacency list of vertex 17
- head->
-
+ head
 
  Adjacency list of vertex 18
- head->
+ head
 
  Adjacency list of vertex 19
  head-> 0
-
- Adjacency list of vertex 20
- head->

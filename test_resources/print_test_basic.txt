@@ -6,4 +6,4 @@
  head-> 2-> 0
 
  Adjacency list of vertex 2
- head 1-> 0
+ head-> 1-> 0

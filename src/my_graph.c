@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-//#include "mylib_graph.h"
 #include "..\include\CuTest.h"
 
 #define STRING_INTIAL_SIZE 256
@@ -46,6 +45,10 @@ void createEdge( struct Graph* graph, int src, int dest ) {
     struct Node* destNode = createNode(dest);
     destNode->next = graph->array[src].head;
     graph->array[src].head = destNode;
+
+    struct Node* srcNode = createNode(src);
+    srcNode->next = graph->array[dest].head;
+    graph->array[dest].head = srcNode;
 }
 
 void printGraph( struct Graph* graph, char* path) {
@@ -75,7 +78,7 @@ char* fromFileToString( FILE* fp ) {
         i++;
         if (i == strSize) {
             strSize = strSize * 2;
-            realloc(string, strSize);
+            string = realloc(string, strSize);
         }
     }
     return string;
@@ -88,8 +91,9 @@ void testPrintGraph_Basic( CuTest *tc ) {
     createEdge(graph, 1, 2);
 
     char* path = "actualOutput.txt";
-    FILE* actualFile = fopen(path, "w");
     printGraph(graph, path);
+
+    FILE* actualFile = fopen(path, "r");
     char* actualOutput = fromFileToString(actualFile);
     fclose(actualFile);
     remove(path);
@@ -98,7 +102,6 @@ void testPrintGraph_Basic( CuTest *tc ) {
     FILE* expectedFile = fopen(path, "r");
     char* expectedOutput = fromFileToString(expectedFile);
     fclose(expectedFile);
-    remove(path);
 
     CuAssertStrEquals(tc, expectedOutput, actualOutput);
 }
@@ -109,9 +112,10 @@ void testPrintGraph_Reversed( CuTest *tc ) {
     createEdge(graph, 2, 0);
     createEdge(graph, 2, 1);
 
-    char* path = "actualOutput.txt";
-    FILE* actualFile = fopen(path, "w");
+    char* path = "actualOutput1.txt";
     printGraph(graph, path);
+
+    FILE* actualFile = fopen(path, "r");
     char* actualOutput = fromFileToString(actualFile);
     fclose(actualFile);
     remove(path);
@@ -120,7 +124,6 @@ void testPrintGraph_Reversed( CuTest *tc ) {
     FILE* expectedFile = fopen(path, "r");
     char* expectedOutput = fromFileToString(expectedFile);
     fclose(expectedFile);
-    remove(path);
 
     CuAssertStrEquals(tc, expectedOutput, actualOutput);
 }
@@ -132,9 +135,10 @@ void testPrintGraph_Large( CuTest *tc ) {
     createEdge(graph, 2, 10);
     createEdge(graph, 15, 16);
 
-    char* path = "actualOutput.txt";
-    FILE* actualFile = fopen(path, "w");
+    char* path = "actualOutput2.txt";
     printGraph(graph, path);
+
+    FILE* actualFile = fopen(path, "r");
     char* actualOutput = fromFileToString(actualFile);
     fclose(actualFile);
     remove(path);
@@ -143,7 +147,6 @@ void testPrintGraph_Large( CuTest *tc ) {
     FILE* expectedFile = fopen(path, "r");
     char* expectedOutput = fromFileToString(expectedFile);
     fclose(expectedFile);
-    remove(path);
 
     CuAssertStrEquals(tc, expectedOutput, actualOutput);
 }
